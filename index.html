@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - TagScript Preprocessor + Docs</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+<!--<a id="top" style="margin: 0; padding: 0; position: absolute; top: 0px; height: 0px;"></a>-->
+<div class="app">
+<div class="top__container">
+<h1 class="title" style="color: white;">TagScript Preprocessor</h1>
+<p class="desc">If you're familiar with <a class="url" href="https://sass-lang.com/" target="_blank">Sass/SCSS</a> for web development, you know how convenient a preprocessor is.</br>It allows you to type less or have a more intuitive way to code than what you normally have to do.</br></p>
+<div class="input__wrapper" id="top-wrapper">
+  <div class="input" id="input" contenteditable="true" oninput="realTimeProcessing()"></div>
+  <div></div>
+</div>
+<p class="pro-tip"><b>Pro Tip:</b> Press <kbd id="keyBtn">Ctrl + ,</kbd> to process once, and <kbd id="keyRT">Ctrl + *</kbd> to toggle real-time processing.</p>
+<div class="middle">
+  <button class="process" onclick="buttonPress()">Process</button>
+  <input type="checkbox" name="realtime" id="realtime">
+  <label for="realtime" id="realtime-label">Real-time processing (may cause lag)</label>
+</div>
+<div class="input__wrapper" id="bot-wrapper">
+  <div class="input" contenteditable="true" id="output">Your processed code will be rendered here.</div>
+  <button class="copy-btn" id="output-copy-btn">Copy</button>
+</div>
+</div>
+<!--<div class="hr"></div>-->
+<div class="bot__container">
+<h2>Blocks Documentation</h2>
+<p class="desc">List of all the available shortened blocks and their parameter. Items between <span class="md">&lt;</span> and <span class="md">&gt;</span> mean optional, and between <span class="md">[</span> and <span class="md">]</span> mean required.</br></br>Click on a column's name to sort it alphabetically. Click on an example to copy it to your clipboard.</p>
+
+<table class="sortable" id="table-docs">
+  <!--<tr>
+    <th>Block</th>
+    <th>Category</th>
+    <th>Usage</th>
+    <th>Example</th>
+  </tr>-->
+
+  <tbody>
+  <!--<tr class="item">
+    <td>Embed Timestamp</td>
+    <td>Embed Blocks</td>
+    <td><p class="md">{em|embed(&lt;ts|time|timestamp&gt;)[:now]}</p></td>
+    <td><p class="md">{em(ts)}</p></td>
+  </tr>
+  
+  <tr class="item">
+    <td>Embed Timestamp</td>
+    <td>Embed Blocks</td>
+    <td><p class="md">{em|embed(&lt;ts|time|timestamp&gt;)[:now]}</p></td>
+    <td><p class="md">{em(ts)}</p></td>
+  </tr>
+  
+  <tr class="item">
+    <td>Embed Timestamp</td>
+    <td>Embed Blocks</td>
+    <td><p class="md">{em|embed(&lt;ts|time|timestamp&gt;)[:now]}</p></td>
+    <td><p class="md">{em(ts)}</p></td>
+  </tr>-->
+  </tbody>
+</td>
+</table>
+</div>
+
+<!--<div class="scroll__wrapper" onclick="focusInput()"><a class="hidden" id="scroll-to-top" href="#top" onclick="focusInput()">^</a></div>-->
+<div id="scroll-to-top" onclick="scrollToTop()">^</div>
+</div>
+
+<footer>Web App made by Asty'#8926 out of ♥ for TagScript.</footer>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
