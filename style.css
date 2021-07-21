@@ -99,9 +99,9 @@ button {
 }
 
 #top-wrapper {
-  position: -webkit-sticky;
+  /*position: -webkit-sticky;*/
   /* Safari */
-  position: sticky;
+  /*position: sticky;*/
   top: 1rem;
   z-index: 99;
 }
