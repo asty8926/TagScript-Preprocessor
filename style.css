@@ -117,6 +117,14 @@ button {
   max-width: 710px;
   border-radius: 3px;
   font-family: "Verdana", "Fira Mono", SFMono-Regular, Consolas, Menlo, monospace;
+  
+    -webkit-touch-callout: text; /* iOS Safari */
+      -webkit-user-select: text; /* Safari */
+       -khtml-user-select: text; /* Konqueror HTML */
+         -moz-user-select: text; /* Firefox */
+          -ms-user-select: text; /* Internet Explorer/Edge */
+              user-select: text; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
 }
 .input:focus {
   outline: 1px solid #7289DA;
