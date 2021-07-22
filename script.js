@@ -1115,7 +1115,7 @@ const blocks = [
 		name: "Variable Assignment Alias",
 		desc: "Creates a variable with a much shorter and SCSS-like way, with a dollar sign before it.\nIt is not really too \"TagScripty\" but it's shorter so I'll take it.",
 		category: cat.newb,
-		reg: /{(\$|=)([^(){}]*):(.*)}/gim,
+		reg: /{(\$|=)([^()].*):(.*)}/gim,
 		example: "{$myvar:Some content}",
 		ts: "{=($2):$3}",
 		structure: {
