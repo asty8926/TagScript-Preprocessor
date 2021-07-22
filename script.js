@@ -50,7 +50,7 @@ const copyButtons = document.querySelectorAll(".copy-btn").forEach(btn => {
     btn.classList.add("green")
     btn.textContent = "Copied!"
   
-  // Removing the green background after 1 second
+  // Removing the green background after N second
   setTimeout(() => {
     btn.classList.remove("green");
     btn.textContent = "Copy"
@@ -134,13 +134,6 @@ window.onload = (() => {
 	return new RegExp(string, flags)
 }*/
 
-/* --- TO DO ---
-
-- Reference a "usage" key to each block in "blocks", to then generate an HTML table with block.name, block.usage and block.ts as their columns, to create a documentation of all available blocks.
-Get inspiration from docs.carl.gg
-<https://docs.carl.gg/tags-and-triggers/ccs/>
-
-*/
 let cat = {
 	embed: "Embed Blocks",
 	dobj: "Discord Object Properties",
@@ -326,11 +319,11 @@ const blocks = [
 		name: "List Block",
 		desc: "Short alias to the list block.",
 		category: cat.alias,
-		reg: /{(l|li)\((.*)\):(.*[^\}])}/gim,
-		example: "{li(2):{join(~):{args}}}",
+		reg: /{(li)\((.*)\):(.*[^\}])}/gim,
+		example: "{li(2):{j(~):{args}}}",
 		ts: "{list($2):$3}",
 		structure: {
-			block: ["l", "li"],
+			block: ["li"],
 			parameter: {
 				content: ["index"],
 				required: true,
@@ -338,6 +331,25 @@ const blocks = [
 			payload: {
 				content: ["list of elements"],
 				required: true
+			}
+		}
+	},
+	{
+		name: "Lower Block",
+		desc: "Short alias to the lower block.",
+		category: cat.alias,
+		reg: /{(l|low):(.*[^\}])}/gim,
+		example: "{l:{args}}",
+		ts: "{lower:$2}",
+		structure: {
+			block: ["l", "low"],
+			parameter: {
+				content: [],
+				required: false,
+			},
+			payload: {
+				content: ["content"],
+				required: false
 			}
 		}
 	},
@@ -356,6 +368,25 @@ const blocks = [
 			},
 			payload: {
 				content: ["list of elements"],
+				required: true
+			}
+		}
+	},
+	{
+		name: "Join Block",
+		desc: "Short alias to the join block.",
+		category: cat.alias,
+		reg: /{(j)\((.*)\):(.*[^\}])}/gim,
+		example: "{j(~):{args}}",
+		ts: "{join($2):$3}",
+		structure: {
+			block: ["li"],
+			parameter: {
+				content: ["string"],
+				required: true,
+			},
+			payload: {
+				content: ["content"],
 				required: true
 			}
 		}
