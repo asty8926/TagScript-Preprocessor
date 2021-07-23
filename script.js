@@ -1281,7 +1281,7 @@ function buttonPress() {
   //console.log(`Base code\n${inputCode}\n\nOutput code\n${outputCode}`)
   
   // Changes the character count for the output  
-  let outputLength = output.textContent.length
+  let outputLength = output.innerText.length
   //const outputID = document.querySelector('#output')
   output.setAttribute('data-value', outputLength)
   // Hides the char count when 0
@@ -1348,7 +1348,7 @@ function realTimeProcessing() {
   let balancedChar = inputBalanced ? char.balanced : char.unbalanced
   
   // Changes the character count for the input
-  let codeLength = input.textContent.length
+  let codeLength = input.innerText.length
   //const inputID = document.querySelector('#input')
   input.setAttribute('data-value', codeLength + " " + balancedChar)
   // Hides the char count when 0
