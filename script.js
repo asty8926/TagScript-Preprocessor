@@ -392,6 +392,25 @@ const blocks = [
 		}
 	},
 	{
+		name: "Contains Block",
+		desc: "Word checking, returns true or false.",
+		category: cat.alias,
+		reg: /{(ctn)\((.*)\):(.*[^\}])}/gim,
+		example: "{ctn(role_id):{u{rid}}}",
+		ts: "{contains($2):$3}",
+		structure: {
+			block: ["ctn"],
+			parameter: {
+				content: ["string"],
+				required: true,
+			},
+			payload: {
+				content: ["string"],
+				required: true
+			}
+		}
+	},
+	{
 		name: "Stop Block",
 		desc: "Prevents the tag from executing at all (including command blocks), while outputting an optional error message, conditionally.\nGenerates a conditional blacklist on the everyone role, while including the \"blank variable\" for you.",
 		category: cat.newb,
