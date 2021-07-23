@@ -126,7 +126,7 @@ function copyOutput() {
 // Behaves like an autofocus for the main div
 // COMMENT OUT WHILE DEBUGGING
 window.onload = (() => {
-  //focusInput()
+  focusInput()
  
 })
 
@@ -1096,11 +1096,11 @@ const blocks = [
 		name: "Comment Block",
 		desc: "Adds a comment variable that never gets called and is only informative, for you or your users to read while going through your code.",
 		category: cat.newb,
-		reg: /{\/:(.*)}/gim,
-		example: "{/:I am a comment, just for me to read}",
-		ts: "{=(COMMENT):$1}",
+		reg: /(\/\/ |\/\/|{\/(\/)?:)(.*)(}\n|\n)/gim,
+		example: "{/:I am a comment, just for me to read}\n// I am a JS comment",
+		ts: "{=(COMMENT):$2}",
 		structure: {
-			block: ["/"],
+			block: ["/", "//"],
 			parameter: {
 				content: [],
 				required: false,
