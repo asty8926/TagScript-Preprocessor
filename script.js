@@ -1096,11 +1096,11 @@ const blocks = [
 		name: "Comment Block",
 		desc: "Adds a comment variable that never gets called and is only informative, for you or your users to read while going through your code.",
 		category: cat.newb,
-		reg: /(\/\/ |\/\/|{\/(\/)?:)(.*)(}\n|\n)/gim,
+		reg: /{\/:(.*)}/gim,
 		example: "{/:I am a comment, just for me to read}\n// I am a JS comment",
-		ts: "{=(COMMENT):$2}",
+		ts: "{=(COMMENT):$1}",
 		structure: {
-			block: ["/", "//"],
+			block: ["/"],
 			parameter: {
 				content: [],
 				required: false,
