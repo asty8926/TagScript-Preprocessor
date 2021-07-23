@@ -396,7 +396,7 @@ const blocks = [
 		desc: "Word checking, returns true or false.",
 		category: cat.alias,
 		reg: /{(ctn)\((.*)\):(.*[^\}])}/gim,
-		example: "{ctn(role_id):{u{rid}}}",
+		example: "{ctn(role_id):{u(rid)}}",
 		ts: "{contains($2):$3}",
 		structure: {
 			block: ["ctn"],
